@@ -62,15 +62,16 @@ console.log('this is how many items are in the array:', showCollection(collectio
 
 let Artist = []
 function findByArtist(x){
-    for (i=0; i<collection.length; i++)
-        if (x === collection[i].artist){
+    for (i=0; i<collection.length; i++){
+       if (x === collection[i].artist){
             Artist.push(collection[i])
             return true;
-        }
-        return false;
+        }//end if
+    }//end for
+    return false;
 
 }//end findByArtist
-console.log('is this is artist in the array?', findByArtist('Dashboard Confessionals') )
+console.log('is this is artist in the array?', findByArtist('The Killers') )
 console.log(Artist)
 
 
