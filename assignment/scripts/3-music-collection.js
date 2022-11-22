@@ -13,6 +13,7 @@ const music1 = {
     title : 'Homesick',
     artist : 'A Day To Remember',
     yearPublished : 2009,
+    
 }
 
 const music2 = {
@@ -48,13 +49,29 @@ console.log(collection)
 
 
 
-function showCollection (x){
-    for (i=0 ; i<x.length ; i++){
+function showCollection (collection){
     
-        console.log()
+    for (i=0 ; i<collection.length ; i++){
+        console.log(collection[i].title + " by " + collection[i].artist + " published in " + collection[i].yearPublished)
+        
     }//end for
-    return x.length;
+    return collection.length;
+    
 }//end showCollection
-console.log('this is how many items are in the array', showCollection(collection) );
+console.log('this is how many items are in the array:', showCollection(collection) );
+
+let Artist = []
+function findByArtist(x){
+    for (i=0; i<collection.length; i++)
+        if (x === collection[i].artist){
+            Artist.push(collection[i])
+            return true;
+        }
+        return false;
+
+}//end findByArtist
+console.log('is this is artist in the array?', findByArtist('Dashboard Confessionals') )
+console.log(Artist)
+
 
 
