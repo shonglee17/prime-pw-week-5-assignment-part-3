@@ -44,7 +44,6 @@ const music6 = {
 }
 
 console.log('add in:', addToCollection(music1, music2, music3, music4, music5, music6) )
-
 console.log(collection)
 
 
@@ -53,10 +52,8 @@ function showCollection (collection){
     
     for (i=0 ; i<collection.length ; i++){
         console.log(collection[i].title + " by " + collection[i].artist + " published in " + collection[i].yearPublished)
-        
     }//end for
     return collection.length;
-    
 }//end showCollection
 console.log('this is how many items are in the array:', showCollection(collection) );
 
@@ -65,14 +62,53 @@ function findByArtist(x){
     for (i=0; i<collection.length; i++){
        if (x === collection[i].artist){
             Artist.push(collection[i])
-            return true;
         }//end if
     }//end for
-    return false;
-
+    return x;
 }//end findByArtist
-console.log('is this is artist in the array?', findByArtist('The Killers') )
+console.log('finding if this artist is in array:', findByArtist('The Killers') )
 console.log(Artist)
 
 
+//Stretch Goals
+let newCollection = []
 
+let obj = {
+    title : 'Dusk And Summer',
+    artist : 'Dashboard Confessionals',
+    yearPublished : 2006,
+}
+
+let obj1 = {
+    title : 'Test',
+    artist : 'Tester',
+    yearPublished : 2022,
+}
+
+let obj2 = {
+    title : '',
+    artist : '',
+    yearPublished : '',
+}
+
+function search(a , b){
+    for (i=0; i<collection.length ; i++){
+        if ( isEqual(a , collection[i]) === true ){
+            console.log('in if')
+            newCollection.push(a)
+            return newCollection;
+        }//end if
+        else if (x.artist === collection[i].artist){
+            console.log('in else if')
+            return collection;
+        }//end else if
+        else{
+            console.log('in else')
+            return newCollection;
+        }//end else
+    }//end for
+}//end search
+
+    console.log('testing to see if this works', search(a , collection) )
+
+    
