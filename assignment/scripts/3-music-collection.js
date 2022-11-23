@@ -10,7 +10,7 @@ const music1 = {
 const music2 = {
     title : 'Sams Town',
     artist : 'The Killers',
-    yearPublished : 2004, 
+    yearPublished : 2006, 
 }
 
 const music3 ={
@@ -66,29 +66,22 @@ function findByArtist(x){
     }//end for
     return x;
 }//end findByArtist
-console.log('finding if this artist is in array:', findByArtist('The Killers') )
+console.log('finding if this artist is in array:', findByArtist('We The Kings') )
 console.log(Artist)
 
 
 //Stretch Goals
 let newCollection = []
 
-
-//cant use objects , search comparing properties
 function search(a , b){
-    if ( a )
     for (i=0; i<collection.length; i++){
         if (a === collection[i].artist && b === collection[i].yearPublished ){
             newCollection.push(collection[i])
-            
-        }//end if
-        
-    }//endfor
-        return newCollection
-
-        
-       
-
-
+        }//end if 
+        else if ( a === '' || b ===''){
+                return collection
+        }//end else if
+    }//end for
+    return newCollection
     }//end search
-console.log('check to see if artist and title is in array:', search('blh' , 'ut' ) )
+console.log('check to see if artist and title is in array:', search( 'The Killers' , 2004  ) )
