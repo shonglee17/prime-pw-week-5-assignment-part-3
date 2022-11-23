@@ -1,14 +1,5 @@
 console.log('***** Music Collection *****')
 
-const collection = [];
-
-function addToCollection(...x){
-    console.log('in addToCollection')
-    collection.push(...x)
-    return collection;
-}//end addToCollection
-
-
 const music1 = {
     title : 'Homesick',
     artist : 'A Day To Remember',
@@ -19,7 +10,7 @@ const music1 = {
 const music2 = {
     title : 'Sams Town',
     artist : 'The Killers',
-    yearPublished : 2006, 
+    yearPublished : 2004, 
 }
 
 const music3 ={
@@ -43,6 +34,14 @@ const music6 = {
     yearPublished : 2006,
 }
 
+const collection = [];
+
+function addToCollection(...x){
+    console.log('in addToCollection')
+    collection.push(...x)
+    return collection;
+}//end addToCollection
+
 console.log('add in:', addToCollection(music1, music2, music3, music4, music5, music6) )
 console.log(collection)
 
@@ -62,6 +61,7 @@ function findByArtist(x){
     for (i=0; i<collection.length; i++){
        if (x === collection[i].artist){
             Artist.push(collection[i])
+            
         }//end if
     }//end for
     return x;
@@ -73,42 +73,22 @@ console.log(Artist)
 //Stretch Goals
 let newCollection = []
 
-let obj = {
-    title : 'Dusk And Summer',
-    artist : 'Dashboard Confessionals',
-    yearPublished : 2006,
-}
 
-let obj1 = {
-    title : 'Test',
-    artist : 'Tester',
-    yearPublished : 2022,
-}
-
-let obj2 = {
-    title : '',
-    artist : '',
-    yearPublished : '',
-}
-
+//cant use objects , search comparing properties
 function search(a , b){
-    for (i=0; i<collection.length ; i++){
-        if ( isEqual(a , collection[i]) === true ){
-            console.log('in if')
-            newCollection.push(a)
-            return newCollection;
+    if ( a )
+    for (i=0; i<collection.length; i++){
+        if (a === collection[i].artist && b === collection[i].yearPublished ){
+            newCollection.push(collection[i])
+            
         }//end if
-        else if (x.artist === collection[i].artist){
-            console.log('in else if')
-            return collection;
-        }//end else if
-        else{
-            console.log('in else')
-            return newCollection;
-        }//end else
-    }//end for
-}//end search
+        
+    }//endfor
+        return newCollection
 
-    console.log('testing to see if this works', search(a , collection) )
+        
+       
 
-    
+
+    }//end search
+console.log('check to see if artist and title is in array:', search('blh' , 'ut' ) )
